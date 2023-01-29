@@ -1,0 +1,38 @@
+package heranca;
+
+public class Main {
+    public static void main(String[] args){
+        
+        //ISTANCIA AS DUAS CLASSES
+        
+        Conta c1 = new Conta("bea", 4829, 4992);
+        ContaCorrente c2 = new ContaCorrente("miau", 578392, 1000, 50);
+        System.out.println(c2.getLimite());
+        ContaPoupanca c3 = new ContaPoupanca("killua", 47583929, 500);
+        System.out.println(c3.getTaxaJuros());
+        if (c2.getTitular()==c3.getTitular() && c2.getNumero()==c3.getNumero()){
+            System.out.println("objetos iguais");
+        }else{
+            System.out.println("objetos diferentes");
+        }
+
+
+        //CHAMANDO FUNCOES E OLHANDO OS SALDOS
+
+        c1.depositarDinheiro(200);
+        System.out.println(c2.getSaldo());
+        c3.render();
+        System.out.println(c3.getSaldo());
+        c2.debitarAnuidade();
+        System.out.println(c2.getSaldo());
+        c2.debitarAnuidade(50);
+        System.out.println(c2.getSaldo());
+        c2.sacarDinheiro(100);
+        c3.depositarDinheiro();
+        System.out.println(c3.getSaldo());
+        c3.depositarDinheiro(12000);
+        System.out.println(c3.getSaldo());
+        System.out.println(c3.toString());  //IMPRIME OQ VC QUER NO OBJETO TIPO NOME, SALDO...
+    }
+    
+}
